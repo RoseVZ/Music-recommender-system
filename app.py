@@ -59,7 +59,7 @@ def get_recommendations(title, cosine_sim=cosine_sim2):
         i = dataset.loc[dataset['aTitle'] == title].index[0]
         lst = list(enumerate(cosine_sim[i]))
         lst = sorted(lst, key=lambda x: x[1], reverse=True)
-        lst = lst[2:12]
+        lst = lst[1:12]
         songindex = [i[0] for i in lst]  # songs index
         return dataset['aTitle'].iloc[songindex], songindex
 
